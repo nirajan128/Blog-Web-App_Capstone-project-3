@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h3{
+    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+.container-fluid,p{
+    font-family: 'Josefin Sans', sans-serif;
+}
+.btn.btn-primary{
+    background-color: #a05c33;
+    font-family: 'Josefin Sans', sans-serif;
+    border-color:#a05c33 ;
+}
+

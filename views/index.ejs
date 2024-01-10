@@ -1,0 +1,45 @@
+<%- include("partials/header.ejs") %>
+<body  style="background-color: #a05c33; ">
+<section id="features" class="min-vh-100">
+
+    <div class="container  mt-5" id="hanging-icons">
+
+        <div class="row g-4 py-2 row-cols-1 row-cols-lg-3 justify-content-evenly">
+            <div class="col col-lg-3 d-flex align-items-center justify-content-center  rounded-4 shadow" style="background-color: #faedcd;">
+                <a href="/create"><button type="button" class="btn btn-primary rounded-4" style="width: 200px;">CREATE</button></a>
+            
+            </div>
+           
+            <div class="col col-lg-8 d-flex align-items-start justify-content-center rounded-4 shadow" style="background-color:#faedcd;">
+
+                <div class="p-5" style="width: 100%;">
+                    <ul class="p-0">
+                        <% if (blog.length === 0) { %>
+                             <h3 class="fs-4"> Create a blog </h3>
+
+                            <% }else{ %>
+                             <h3 class="text-center fs-2 fw-bold ">YOUR BLOG POSTS</h3>
+                              <%blog.forEach(currentPost => { %>
+                                
+                                <li class="p-1 mt-3 list-group-item">
+                                    <p class="fs-6 fst-italic"><%= currentPost.dateTime %></p>
+                                    <h3 class="fs-4"><%= currentPost.title %></h3>
+                                    <p class="fs-4"><%= currentPost.content  %></p>
+                                    <a href="/display/<%= blog.indexOf(currentPost)  %>"><button type="button" class="btn btn-primary rounded-circle fs-5" style="width: auto;">⇨</button></a>
+                                </li>
+                                <hr class="border-3 opacity-75" style="border-color: #a05c33;">
+                             <% }); %>
+
+                            <%}%> 
+                            
+                    </ul>     
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+</section>
+</body>
+
+<%- include("partials/footer.ejs") %>

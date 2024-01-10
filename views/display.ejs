@@ -1,0 +1,29 @@
+<%-include("partials/header.ejs") %>
+
+<body style="background-color: #a05c33;">
+    <div class="container min-vh-100 my-5">
+        <div class="row justify-content-center row-cols-1 row-cols-lg-3">
+            <div class="content col-lg-8 col-12 p-4" style="background-color: #faedcd;">
+            <p class="fs-5 fst-italic"><%= dateTime %></p>
+            <h3 class="fs-4">
+                <%= title %>
+            </h3>
+            <p class="fs-4">
+                <%=content %>
+            </p>
+            </div>
+            <div class="content col-lg-2 col-8 my-4 mx-4 p-4 text-center">
+                <a href="/update/<%= postId %>"><input style="width: 85%;" class="btn btn-light fs-5 btn-lg my-2 button-rad" type="button"
+                        value="Edit"></a>
+            
+                        <form action="/delete" method="post">
+                            <input type="text" name="postId" hidden value="<%= postId %>">
+                            <input style="width: 85%;" class="btn btn-danger fs-5 btn-lg my-2 button-rad" type="submit" name="delete"
+                                value="Delete">
+                        </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<%-include("partials/footer.ejs") %>
